@@ -31,5 +31,6 @@ static id sharedCntr = nil;
 }
 
 - (void)applicationWillFinishLaunching: (NSNotification *)aNotification {
+	[self createMenu];
 }
 @end

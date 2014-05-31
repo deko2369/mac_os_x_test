@@ -10,6 +10,8 @@
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>test</string>
+	<key>NSPrincipalClass</key>
+	<string>TestController</string>
 	</dict>
 </plist>
 
