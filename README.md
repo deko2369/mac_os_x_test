@@ -4,12 +4,12 @@ attempt to make mac os x app without XCode
 
 To compile:
 ---
-clang -Wall -fobjc-arc -o Test TestController.m main.m -framework Foundation -framework AppKit
+`clang -Wall -fobjc-arc -o Test TestController.m main.m -framework Foundation -framework AppKit`  
 or
-make
+`make`
 
 To Run:
 ---
-make run
+`make run`
 or
-make && open Test.app
+`make && open Test.app`
