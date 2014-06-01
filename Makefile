@@ -30,6 +30,9 @@ appdir:
 run: $(TARGET)
 	open $(APPNAME)
 
+gdb: $(TARGET)
+	gdb $(APPDIRCONT)/MacOS/$(TARGET)
+
 clean:
 	$(RM) -r $(DEST)
 	$(RM) $(OBJS)
