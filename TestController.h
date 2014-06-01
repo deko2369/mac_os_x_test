@@ -2,4 +2,5 @@
 
 @interface TestController: NSObject <NSApplicationDelegate>
 + (id)sharedController;
+- (void) applicationWillFinishLaunching: (NSNotification *)aNotification;
 @end

@@ -12,22 +12,26 @@ static id sharedCntr = nil;
 	return sharedCntr;
 }
 
-- (void)terminate: (id)sender {
-}
-
 - (void)createMenu {
-	NSMenu *mainMenu = [[NSMenu alloc] initWithTitle: @"Tester"];
-	NSMenuItem *menuItem;
-	NSMenu *subMenu;
+	NSMenu *menubar = [NSMenu new];
+	NSMenuItem *appMenuItem = [NSMenuItem new];
 
-	menuItem = [mainMenu addItemWithTitle: @"quit"
+	// あちこちのサイトにあるこの記述は利用できない
+	// スクラッチでやる場合は NSMenu を新たに生成し、
+	// setMainMenu: メソッドで NSApp へ登録する
+	// [[NSApp mainMenu] addItem: appMenuItem];
+
+	[menubar addItem: appMenuItem];
+	[NSApp setMainMenu: menubar];
+
+	NSMenu *appMenu = [NSMenu new];
+	NSMenuItem *quitMenuItem =
+		[[NSMenuItem alloc] initWithTitle: @"Quit" 
 								   action: @selector(terminate:)
 							keyEquivalent: @"q"];
-	subMenu = [[NSMenu alloc] initWithTitle: @"Apple"];
-	[NSApp performSelector: @selector(setAppleMenu:) withObject: subMenu];
-	[mainMenu setSubmenu: subMenu forItem: menuItem];
-	[NSApp setWindowsMenu: subMenu];
-	[NSApp setMainMenu: mainMenu];
+	[appMenu addItem: quitMenuItem];
+
+	[appMenuItem setSubmenu: appMenu];
 }
 
 - (void)applicationWillFinishLaunching: (NSNotification *)aNotification {
