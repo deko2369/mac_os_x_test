@@ -1,2 +1,6 @@
+Menu
 http://sitearo.com/cocoa/0900_general/ccyp_VolumeList.pdf
 http://www.cocoawithlove.com/2010/09/minimalist-cocoa-programming.html
+
+Window
+http://www.nongnu.org/gstutorial/en/ch10.html

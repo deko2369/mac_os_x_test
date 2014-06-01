@@ -3,6 +3,7 @@
 static id sharedCntr = nil;
 
 @implementation TestController {
+	NSWindow *window;
 }
 
 + (id)sharedController {
@@ -34,7 +35,23 @@ static id sharedCntr = nil;
 	[appMenuItem setSubmenu: appMenu];
 }
 
+- (void)createWindow {
+	window = [[NSWindow alloc]
+		initWithContentRect: NSMakeRect(300, 300, 200, 100)
+				  styleMask: (NSTitledWindowMask |
+						      NSMiniaturizableWindowMask |
+						      NSResizableWindowMask)
+				  backing: NSBackingStoreBuffered
+					defer: YES];
+	[window setTitle: @"Hello World"];
+}
+
 - (void)applicationWillFinishLaunching: (NSNotification *)aNotification {
 	[self createMenu];
+	[self createWindow];
+}
+
+- (void)applicationDidFinishLaunching: (NSNotification *)aNotification {
+	[window makeKeyAndOrderFront: self];
 }
 @end
