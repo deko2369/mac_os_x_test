@@ -1,7 +1,7 @@
 CC         = clang
 TARGET     = Test
 FRAMEWORKS = -framework Foundation -framework AppKit
-CFLAGS     = -Wall -Werror
+CFLAGS     = -Wall -Werror -fobjc-arc
 LDFLAGS    = $(LIBRAIRES) $(FRAMEWORKS)
 OBJS       = main.o TestController.o
 
